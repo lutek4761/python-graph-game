@@ -1,5 +1,60 @@
 {
-  "objects": {
-
-  }
+  "objects": [
+    {
+      "id" : "1",
+      "situation" : "bohater jest w karczmie, co robisz?",
+      "connections" : {
+        "1" : {
+          "target_node_id" : "2",
+          "decision" : "ide spac"
+        },
+        "2" : {
+          "target_node_id": "3",
+          "decision": "ide do lasu"
+        }
+      }
+    },
+    {
+      "id" : "2",
+      "situation" : "budzisz sie rano w jaskini, co robisz?",
+      "connections" : {
+        "1" : {
+          "target_node_id" : "4",
+          "decision" : "ide spac dalej"
+        },
+        "2" : {
+          "target_node_id": "5",
+          "decision": "wychodze z jaskini"
+        }
+      }
+    },
+    {
+      "id" : "3",
+      "situation" : "w lesie spotykasz stato rozszalalych wiewiorek, co robisz?",
+      "connections" : {
+        "1" : {
+          "target_node_id" : "5",
+          "decision" : "uciekam"
+        },
+        "2" : {
+          "target_node_id": "6",
+          "decision": "walcze"
+        }
+      }
+    },
+    {
+      "id" : "4",
+      "situation" : "description",
+      "connections" : {
+        "1" : {
+          "target_node_id" : "1",
+          "decision" : ""
+        },
+        "2" : {
+          "target_node_id": "1",
+          "decision": ""
+        }
+      }
+    }
+  ]
 }
