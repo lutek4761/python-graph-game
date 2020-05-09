@@ -1,15 +1,13 @@
 import pygame
 from pygame.locals import *
-from game import Game
-from menu import Menu
+from scene_manager import SceneManager
 
-pygame.init()
-display = pygame.display.set_mode((800, 800))
-FPS = 1
+
+FPS = 30
 delta = 0
-
-game = Game()
-menu = Menu()
+up = False
+down = False
+enter = False
 clock = pygame.time.Clock()
 
 while True:
@@ -23,16 +21,28 @@ while True:
         if event.type == QUIT or (event.type == KEYDOWN and event.key == K_ESCAPE):
             pygame.quit()
             exit(0)
-        if event.type == pygame.MOUSEBUTTONDOWN:
-            pass
-        else:
-            pass
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_DOWN:
+                down = True
+            if event.key == pygame.K_UP:
+                up = True
+            if event.key == pygame.K_RETURN:
+                enter = True
+
+        if event.type == pygame.KEYUP:
+            if event.key == pygame.K_DOWN:
+                down = False
+            if event.key == pygame.K_UP:
+                up = False
+            if event.key == pygame.K_RETURN:
+                enter = False
 
     # if cos tam ...
-    game.tick()
-    game.draw()
-    # else cos tam...
-    menu.tick()
-    menu.draw()
+    # game.tick(up, down, enter)
+    # game.draw()
+    # # else cos tam...
+    SceneManager.current_scene.tick(up, down, enter)
+    SceneManager.current_scene.draw()
+    SceneManager.check_for_switch()
     pygame.display.update()
-    display.fill([0, 0, 0])
+    SceneManager.display.fill([0, 0, 0])

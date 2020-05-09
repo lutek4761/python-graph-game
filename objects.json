@@ -1,58 +1,86 @@
 {
   "objects": [
     {
-      "id" : "1",
-      "situation" : "bohater jest w karczmie, co robisz?",
-      "connections" : {
-        "1" : {
-          "target_node_id" : "2",
-          "decision" : "ide spac"
+      "id": "1",
+      "description": "bohater jest w karczmie, co robisz?",
+      "connections": {
+        "1": {
+          "target_node_id": "2",
+          "decision": "ide spac"
         },
-        "2" : {
+        "2": {
           "target_node_id": "3",
           "decision": "ide do lasu"
         }
       }
     },
     {
-      "id" : "2",
-      "situation" : "budzisz sie rano w jaskini, co robisz?",
-      "connections" : {
-        "1" : {
-          "target_node_id" : "4",
-          "decision" : "ide spac dalej"
+      "id": "2",
+      "description": "budzisz sie rano w jaskini, co robisz?",
+      "connections": {
+        "1": {
+          "target_node_id": "4",
+          "decision": "ide spac dalej"
         },
-        "2" : {
+        "2": {
           "target_node_id": "5",
           "decision": "wychodze z jaskini"
         }
       }
     },
     {
-      "id" : "3",
-      "situation" : "w lesie spotykasz stato rozszalalych wiewiorek, co robisz?",
-      "connections" : {
-        "1" : {
-          "target_node_id" : "5",
-          "decision" : "uciekam"
+      "id": "3",
+      "description": "w lesie spotykasz stato rozszalalych wiewiorek, co robisz?",
+      "connections": {
+        "1": {
+          "target_node_id": "5",
+          "decision": "uciekam"
         },
-        "2" : {
+        "2": {
           "target_node_id": "6",
           "decision": "walcze"
         }
       }
     },
     {
-      "id" : "4",
-      "situation" : "description",
-      "connections" : {
-        "1" : {
-          "target_node_id" : "1",
-          "decision" : ""
-        },
-        "2" : {
+      "id": "4",
+      "description": "starczy tego spania, leniu",
+      "connections": {
+        "1": {
           "target_node_id": "1",
-          "decision": ""
+          "decision": "wracam na start"
+        },
+        "2": {
+          "target_node_id": "1",
+          "decision": "ide na browarka"
+        }
+      }
+    },
+    {
+      "id": "5",
+      "description": "udaje Ci sie ujsc z zyciem, choc ledwo, niedaleko zauwazasz karczme, co robisz?",
+      "connections": {
+        "1": {
+          "target_node_id": "1",
+          "decision": "ide na piwko"
+        },
+        "2": {
+          "target_node_id": "2",
+          "decision": "zmeczylem sie uciekaniem, ide spac"
+        }
+      }
+    },
+    {
+      "id": "6",
+      "description": "jedna z wiewiorek wziela Cie z zaskoczenia i ugryzla w szyje, tracisz przytomnosc, po kilku godzinach budzisz sie i chce Ci sie cholernie pic, co robisz?",
+      "connections": {
+        "1": {
+          "target_node_id": "1",
+          "decision": "ide na piwko"
+        },
+        "2": {
+          "target_node_id": "3",
+          "decision": "zostaje w lesie i szukam zrodla rzeki"
         }
       }
     }
