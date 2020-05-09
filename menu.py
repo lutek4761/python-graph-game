@@ -35,7 +35,7 @@ class Menu:
                 self.set_game_scene = True
             elif self.selected_index == 1:
                 pass # zapisz
-            elif self.selected_index == 0:
+            elif self.selected_index == 2:
                 pygame.quit()
                 exit(0)
 

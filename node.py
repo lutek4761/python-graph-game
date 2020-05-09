@@ -19,13 +19,15 @@ class Node:
     def draw(self, selected_index):
         line_length = 50
         lines_counter = 1
-        iterations = int(len(self.description) / line_length)
-        for x in range(iterations):
-            text = self.node_font.render(self.description[x * line_length: (x + 1) * line_length], False,
-                                         (255, 255, 255))
-            self.display.blit(text, (50, 25 * lines_counter))
-            lines_counter += 1
-        text = self.node_font.render(self.description[iterations * line_length:], False, (255, 255, 255))
+        string = ""
+        for char_index in range(int(len(self.description))):
+            string += self.description[char_index]
+            if len(string) > 50 and self.description[char_index] == " ":
+                text = self.node_font.render(string, False, (255, 255, 255))
+                self.display.blit(text, (50, 25 * lines_counter))
+                lines_counter += 1
+                string = ""
+        text = self.node_font.render(string, False, (255, 255, 255))
         self.display.blit(text, (50, 25 * lines_counter))
 
         for key in self.connections:
