@@ -331,7 +331,7 @@
     },
     {
       "id": "19",
-      "description": "Kmicic jakimś uwierzył Ci. Zdradza ci on, że wysłano go do Bierż",
+      "description": "Kmicic uwierzył Ci. Zdradza ci on, że wysłano go do Bierż",
       "connections": {
         "1": {
           "target_node_id": "23",
