@@ -692,8 +692,8 @@
       }
     },
     {
-      "id": "Świętujesz wielkie zwycięstwo wraz z resztą swoich kompanów i przyjaciół. Alkohol leje się strumieniami a co chwila dochodzą do was coraz to lepsze informacje. Przełomem okazuje się komunikat o powrocie króla. Spoglądacie na wschód słońca z nadzieją na lepsze jutro",
-      "description": " ",
+      "id": "42",
+      "description": "Świętujesz wielkie zwycięstwo wraz z resztą swoich kompanów i przyjaciół. Alkohol leje się strumieniami a co chwila dochodzą do was coraz to lepsze informacje. Przełomem okazuje się komunikat o powrocie króla. Spoglądacie na wschód słońca z nadzieją na lepsze jutro",
       "connections": {
         "1": {
           "target_node_id": "1",
@@ -705,8 +705,8 @@
       }
     },
     {
-      "id": "Otrzymujesz uroczysty pogrzeb godny bohatera narodowego. Twoja pamięć będzie żyć w sercach mieszkańców tego kraju przez długie dziesięciolecia.",
-      "description": " ",
+      "id": "43",
+      "description": "Otrzymujesz uroczysty pogrzeb godny bohatera narodowego. Twoja pamięć będzie żyć w sercach mieszkańców tego kraju przez długie dziesięciolecia.",
       "connections": {
         "1": {
           "target_node_id": "1",
