@@ -9,9 +9,9 @@ class Game:
         self.display = display
         self.json_objects = FileManager.load('objects.json')
         self.nodes = {}
-
         for obj in self.json_objects["objects"]:
             self.nodes.update({obj["id"]: Node(obj["id"], obj["connections"], obj["description"], self.display)})
+        print(self.nodes)
         self.current_node = self.nodes["1"]
         self.children_indexes = []
         for index in self.current_node.connections:
@@ -19,7 +19,6 @@ class Game:
         self.__currently_selected_option = 1
         self.blocker = False
         self.set_menu_scene = False
-        print(self.children_indexes)
 
     def tick(self, up, down, enter):
         if up and self.blocker:
@@ -41,12 +40,12 @@ class Game:
             self.blocker = True
 
         if enter and self.blocker:
-            self.current_node = self.nodes[str(self.children_indexes[self.__currently_selected_option - 1])]
+            self.blocker = False
+            self.current_node = self.nodes[str(self.children_indexes[self.__currently_selected_option - 1])]  # [2, 3]
             self.__currently_selected_option = 1
             self.children_indexes.clear()
             for index in self.current_node.connections:
                 self.children_indexes.append(self.current_node.connections[index]["target_node_id"])
-            self.blocker = False
         elif not down and not self.blocker and not up and not enter:
             self.blocker = True
 

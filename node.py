@@ -17,13 +17,12 @@ class Node:
         return "Index: {}\nDescription: {}\n".format(self.id, self.description) + connections
 
     def draw(self, selected_index):
-        line_length = 50
         lines_counter = 1
         string = ""
         for char_index in range(int(len(self.description))):
             string += self.description[char_index]
             if len(string) > 50 and self.description[char_index] == " ":
-                text = self.node_font.render(string, False, (255, 255, 255))
+                text = self.node_font.render(string, False, (255, 0, 0))
                 self.display.blit(text, (50, 25 * lines_counter))
                 lines_counter += 1
                 string = ""

@@ -37,10 +37,6 @@ while True:
             if event.key == pygame.K_RETURN:
                 enter = False
 
-    # if cos tam ...
-    # game.tick(up, down, enter)
-    # game.draw()
-    # # else cos tam...
     SceneManager.current_scene.tick(up, down, enter)
     SceneManager.current_scene.draw()
     SceneManager.check_for_switch()

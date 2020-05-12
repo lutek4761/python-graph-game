@@ -1,7 +1,9 @@
 from pygame import font
 import pygame
 
+
 class Menu:
+
     def __init__(self, display):
         font.init()
         self.display = display

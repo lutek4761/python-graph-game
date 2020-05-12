@@ -2,85 +2,718 @@
   "objects": [
     {
       "id": "1",
-      "description": "bohater jest w karczmie, co robisz?",
+      "description": "Bohater znajduje się w karczmie. Muzyka gra, wszyscy ze sobą rozmawiają, piwo jest zimne. Nagle do środka wbiega powstaniec. Informuje o wybuchu wojny ze Szwedami. Co robisz?",
       "connections": {
         "1": {
           "target_node_id": "2",
-          "decision": "ide spac"
+          "decision": "Ruszam od razu mimo, że zaraz będzie zmierzch ",
+          "is_active": true,
+          "switcher": {
+          }
         },
         "2": {
           "target_node_id": "3",
-          "decision": "ide do lasu"
+          "decision": "Płacę za nocleg w stodole i czekam na poranek",
+          "is_active": true,
+          "switcher": {
+          }
         }
       }
     },
     {
       "id": "2",
-      "description": "budzisz sie rano w jaskini, co robisz?",
+      "description": "Jadąc przez las słyszysz jakieś hałasy w pobliżu. Co robisz?",
       "connections": {
         "1": {
           "target_node_id": "4",
-          "decision": "ide spac dalej"
+          "decision": "Postanawiasz to sprawdzić",
+          "is_active": true,
+          "switcher": {
+          }
         },
         "2": {
           "target_node_id": "5",
-          "decision": "wychodze z jaskini"
+          "decision": "Ignoruję to i jadę dalej",
+          "is_active": true,
+          "switcher": {
+          }
         }
       }
     },
     {
       "id": "3",
-      "description": "w lesie spotykasz stato rozszalalych wiewiorek, co robisz?",
+      "description": "W czasie nocy wraz ze swoimi ludźmi zostajecie obrabowani. Tracicie dużą część uzbrojenia. Wasze szanse na przeżycie w walce będą mniejsze. Nie tracąc więcej czasu ruszacie w drogę.",
       "connections": {
         "1": {
-          "target_node_id": "5",
-          "decision": "uciekam"
-        },
-        "2": {
-          "target_node_id": "6",
-          "decision": "walcze"
+          "target_node_id": "10",
+          "decision": "Docierasz cały i zdrowy do Wodokotów",
+          "is_active": true,
+          "switcher": {
+          }
         }
       }
     },
     {
       "id": "4",
-      "description": "starczy tego spania, leniu",
+      "description": "Idąc wgłąb lasu widzisz jakiegoś obdartego starca i lokalnych bandytów, którzy nad nim stoją. Zdają się obrabowywać go ze wszystkich kosztowności. Pomagasz mu czy odchodzisz?",
       "connections": {
         "1": {
-          "target_node_id": "1",
-          "decision": "wracam na start"
+          "target_node_id": "6",
+          "decision": "Pomagasz",
+          "is_active": true,
+          "switcher": {
+          }
         },
         "2": {
-          "target_node_id": "1",
-          "decision": "ide na browarka"
+          "target_node_id": "7",
+          "decision": "Odchodzisz",
+          "is_active": true,
+          "switcher": {
+          }
         }
       }
     },
     {
       "id": "5",
-      "description": "udaje Ci sie ujsc z zyciem, choc ledwo, niedaleko zauwazasz karczme, co robisz?",
+      "description": "Reszta drogi do twojego pierwszego miejsca docelowego mija bezproblemowo. Po drodze żartujecie z kompanami, że ten las musi być nawiedzony.",
       "connections": {
         "1": {
-          "target_node_id": "1",
-          "decision": "ide na piwko"
-        },
-        "2": {
-          "target_node_id": "2",
-          "decision": "zmeczylem sie uciekaniem, ide spac"
+          "target_node_id": "10",
+          "decision": "Docierasz cały i zdrowy do Wodokotów",
+          "is_active": true,
+          "switcher": {
+          }
         }
       }
     },
     {
       "id": "6",
-      "description": "jedna z wiewiorek wziela Cie z zaskoczenia i ugryzla w szyje, tracisz przytomnosc, po kilku godzinach budzisz sie i chce Ci sie cholernie pic, co robisz?",
+      "description": "Dochodzi do walki z bandytami. Możesz wybrać 3 opcje/strategie walki. Każda może spowodować śmierć lub przeżycie. Jeśli giniesz twoja gra tutaj się kończy. ",
+      "connections": {
+        "1": {
+          "target_node_id": "8",
+          "decision": "Atak frontalny z bronią białą",
+          "is_active": true,
+          "switcher": {
+          }
+        },
+        "2": {
+          "target_node_id": "9",
+          "decision": "Odwrócenie uwagi i zakradnięcie się",
+          "is_active": true,
+          "switcher": {
+          }
+        },
+        "3": {
+          "target_node_id": "11",
+          "decision": "Wejście na górkę  i rozstrzelanie",
+          "is_active": true,
+          "switcher": {
+          }
+        }
+      }
+    },
+    {
+      "id": "7",
+      "description": "Reszta drogi mija bezproblemowo. Twoi kompani są niezadowoleni, że zostawiłeś człowieka w potrzebie. Morale spada. ",
+      "connections": {
+        "1": {
+          "target_node_id": "10",
+          "decision": "Docierasz cały i zdrowy do Wodokotów",
+          "is_active": true,
+          "switcher": {
+          }
+        }
+      }
+    },
+    {
+      "id": "8",
+      "description": "Ta fatalna i nieprzemyślana w skutkach decyzja powoduje śmierć twojego bohatera. Bandyci wyciągają broń palną i oddają do ciebie serię strzałów. Po chwili padasz martwy [*]",
       "connections": {
         "1": {
           "target_node_id": "1",
-          "decision": "ide na piwko"
+          "decision": "Zacznij jeszcze raz..",
+          "is_active": true,
+          "switcher": {
+          }
+        }
+      }
+    },
+    {
+      "id": "9",
+      "description": "Postanawiasz odwrócić uwagę bandytów. W międzyczasie twoi ludzie mieliby ich zajść. Wszystko idzie gładko dopóki jeden z twoich kompanów nie nadepnął na gałąź. Bandyta wypala a ty zostajesz rannych. Udaje się ich zabić ale natychmiast musicie stąd uciekać",
+      "connections": {
+        "1": {
+          "target_node_id": "10",
+          "decision": "Docierasz do Wodokotów ranny",
+          "is_active": true,
+          "switcher": {
+          }
+        }
+      }
+    },
+    {
+      "id": "10",
+      "description": "Bohater dociera mniej lub bardziej bezpiecznie do tej miejscowości. Na miejscu okazuje się, że Pan Wołodyjowski ruszył za niejakim Kmicicem do Lubicza. Człowiek ten dopuścił się bowiem uprowadzenia kobiety. W tym miejscu opuszcza cię ksiądz. Co robisz dalej?",
+      "connections": {
+        "1": {
+          "target_node_id": "13",
+          "decision": "Podróż do Lubicza",
+          "is_active": true,
+          "switcher": {
+          }
+        }
+      }
+    },
+    {
+      "id": "11",
+      "description": "Postanawiacie wejść na okoliczne wzniesienie i rozstrzelać przeciwników z góry. Udaje się to wyśmienicie. Nieznajomy zostaje uratowany. Możesz przeszukać bandytów w nadziei na znalezienie kosztowności. Robisz to?",
+      "connections": {
+        "1": {
+          "target_node_id": "14",
+          "decision": "Tak",
+          "is_active": true,
+          "switcher": {
+          }
         },
         "2": {
-          "target_node_id": "3",
-          "decision": "zostaje w lesie i szukam zrodla rzeki"
+          "target_node_id": "12",
+          "decision": "Nie",
+          "is_active": true,
+          "switcher": {
+          }
+        }
+      }
+    },
+    {
+      "id": "12",
+      "description": "Postanawiasz nie ruszać ciał. Uznajesz, że i tak straciłeś już wystarczająco dużo czasu. Zabierasz ze sobą nieznajomego i ruszasz w dalszą drogę",
+      "connections": {
+        "1": {
+          "target_node_id": "10",
+          "decision": "Docierasz cały i zdrowy do Wodokotów",
+          "is_active": true,
+          "switcher": {
+            "1": {
+              "node_id": "23",
+              "connection_id": "1",
+              "value": true
+            },
+            "2": {
+              "node_id": "23",
+              "connection_id": "2",
+              "value": false
+            },
+            "3": {
+              "node_id": "35",
+              "connection_id": "1",
+              "value": true
+            },
+            "4": {
+              "node_id": "38",
+              "connection_id": "1",
+              "value": true
+            },
+            "5": {
+              "node_id": "38",
+              "connection_id": "3",
+              "value": false
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "13",
+      "description": "Docierasz do Lubicza. Na miejscu nie zastałeś Pana Wołodyjowskiego. Jeden z chłopów informuje cię, że dostał list od Radziwiłła i udał się do jego włości wraz z niejakim Kmicicem i resztą kompanów. Co robisz?",
+      "connections": {
+        "1": {
+          "target_node_id": "15",
+          "decision": "Podróż do majątku Radziwiłła",
+          "is_active": true,
+          "switcher": {
+          }
+        }
+      }
+    },
+    {
+      "id": "14",
+      "description": "Kiedy przeszukujesz jednego z bandytów okazuje się, że ten nadal żyje. Korzystając z twojej nieuwagi wyciąga nóż i zadaje ci śmiertelny cios w serce. Padasz martwy na ziemię [*]",
+      "connections": {
+        "1": {
+          "target_node_id": "1",
+          "decision": "Zacznij od nowa..",
+          "is_active": true,
+          "switcher": {
+          }
+        }
+      }
+    },
+    {
+      "id": "15",
+      "description": "W czasie drogi bohater spotyka pancernego. Żołnierz informuje go o zdradzie Radziwiłła i nieznanym losie jego przyjaciół. Mogli zostać skazani na śmierć. Dowiadujesz się również, że we wszystko zamieszany jest ten nieszczęsny Kmicic, który ruszył z poselstwem w drogę oraz, że w okolicy jest oddział zdrajców wierny Radziwiłłowi. Co robisz?",
+      "connections": {
+        "1": {
+          "target_node_id": "16",
+          "decision": "Ruszam w pościg za Kmicicem",
+          "is_active": true,
+          "switcher": {
+          }
+        },
+        "2": {
+          "target_node_id": "17",
+          "decision": "Ruszam w pościg za oddziałem zdrajców",
+          "is_active": true,
+          "switcher": {
+          }
+        }
+      }
+    },
+    {
+      "id": "16",
+      "description": "Po kilku ciężkich dniach doganiasz Kmicica. Zaczynacie pertraktować",
+      "connections": {
+        "1": {
+          "target_node_id": "18",
+          "decision": "Starasz się wydobyć informacje podstępem",
+          "is_active": true,
+          "switcher": {
+          }
+        },
+        "2": {
+          "target_node_id": "19",
+          "decision": "Próbujesz przekonać Kmicica o słuszności swojej sprawy by Ci pomógł",
+          "is_active": true,
+          "switcher": {
+          }
+        }
+      }
+    },
+    {
+      "id": "17",
+      "description": " Po kilku godzinach natrafiasz na wspomniany oddział. Możesz wybrać 3 opcje/strategie walki. Każda z nich przyniesie inny rezultat. Jeśli zginiesz twoja gra tutaj się kończy. ",
+      "connections": {
+        "1": {
+          "target_node_id": "20",
+          "decision": "Zasadzka z drzewem",
+          "is_active": true,
+          "switcher": {
+          }
+        },
+        "2": {
+          "target_node_id": "21",
+          "decision": "Atak na drodze",
+          "is_active": true,
+          "switcher": {
+          }
+        },
+        "3": {
+          "target_node_id": "22",
+          "decision": "Atak na obozowisko wroga",
+          "is_active": true,
+          "switcher": {
+          }
+        }
+      }
+    },
+    {
+      "id": "18",
+      "description": "Kmicic przejrzał Cię i z szyderczym uśmiechem wyciąga pistolet i wypala ci kulę w łeb. Po chwili padasz martwy na ziemię [*]",
+      "connections": {
+        "1": {
+          "target_node_id": "1",
+          "decision": "Spróbuj ponownie",
+          "is_active": true,
+          "switcher": {
+          }
+        }
+      }
+    },
+    {
+      "id": "19",
+      "description": "Kmicic jakimś uwierzył Ci. Zdradza ci on, że wysłano go do Bierż",
+      "connections": {
+        "1": {
+          "target_node_id": "23",
+          "decision": "Ruszasz do Bierż",
+          "is_active": true,
+          "switcher": {
+          }
+        }
+      }
+    },
+    {
+      "id": "20",
+      "description": "Decydujesz się na urządzenie zasadzki. Ustawiasz ludzi na wzniesieniu w lesie a gdy pojawia się wróg oddajesz ogień i zrzucasz na nich ścięte drzewo. Większość przeciwników pada zanim zdąrzy się zorientować co to było. Resztą dobijać w walce na broń białą. Łapiesz jednego z żołnierzy. Po jego przesłuchaniu dowiadujesz się, że Wołodyjowski zaginął w trakcie eskortowania do Bierż",
+      "connections": {
+        "1": {
+          "target_node_id": "23",
+          "decision": "Ruszasz do Bierż",
+          "is_active": true,
+          "switcher": {
+          }
+        }
+      }
+    },
+    {
+      "id": "21",
+      "description": "Jesteś w dużym pośpiechu więc nie zamierzasz bawić się w zasadzki. Każda minuta się liczy. Po kilku godzinach poszukiwań napotykasz na drodze żołnierzy, którzy odpowiadają opisowi. Atakujesz ich przy użyciu koni. Pierwszy atak powiódł się. Niestety nie przewidziałeś, że za pierwszą kolumną podąża duża. Po kilku minutach zjawia się ona na miejscu a między wami dochodzi do walki. Niestety z powodu waszej małej ilości ponosicie klęskę i giniecie [*]",
+      "connections": {
+        "1": {
+          "target_node_id": "24",
+          "decision": "Kontynuuj..",
+          "is_active": true,
+          "switcher": {
+          }
+        }
+      }
+    },
+    {
+      "id": "22",
+      "description": "Po poszukiwaniach odnajdujesz obozowisko wroga. Decydujesz się je zaatakować o zmroku. Niestety nie doceniasz obrony. Twoi ludzie zostają zauważeni przez wartowników. Wywiązuje się walka w trakcie której ich przewaga liczebna powoduje waszą śmierć [*]",
+      "connections": {
+        "1": {
+          "target_node_id": "1",
+          "decision": "Zacznij od nowa..",
+          "is_active": true,
+          "switcher": {
+          }
+        }
+      }
+    },
+    {
+      "id": "23",
+      "description": "Docierasz do Bierż. W zależności od twoich wyborów mogą stać się dwie rzeczy",
+      "connections": {
+        "1": {
+          "target_node_id": "25",
+          "decision": "Napotykasz oddział Bogusława",
+          "is_active": false,
+          "switcher": {
+          }
+        },
+        "2": {
+          "target_node_id": "26",
+          "decision": "Napotykasz bandytów",
+          "is_active": true,
+          "switcher": {
+          }
+        }
+      }
+    },
+    {
+      "id": "24",
+      "description": "2 tygodnie później po drodze tej przejeżdża oddział Wołodyjowskiego. Na leżących niedaleko trupach rozpoznaje ubrania swojego dawnego przyjaciela. Urządza niewielki pogrzeb na jego cześć [*]",
+      "connections": {
+        "1": {
+          "target_node_id": "1",
+          "decision": "Zacznij jeszcze raz..",
+          "is_active": true,
+          "switcher": {
+          }
+        }
+      }
+    },
+    {
+      "id": "25",
+      "description": "Okazuje się, że ksiądz którego uratowałeś to tak naprawdę znajomy Wołodyjowskiego i szlachcic, który organizuje się do walki z Radziwiłłem. Proponuje ci dołączenie w jego szeregi. Jako, że zależy ci na znalezieniu Wołodyjowskiego zgadzasz się. Oprócz tego zostajesz poinformowany o tym, że wojska konfederatów zbierają się pod Białymstokiem gdzie ma dojść do bitwy.",
+      "connections": {
+        "1": {
+          "target_node_id": "32",
+          "decision": "Udajesz się pod Białystok",
+          "is_active": true,
+          "switcher": {
+          }
+        }
+      }
+    },
+    {
+      "id": "26",
+      "description": "Miejscowość jest nękana przez bandytów. Zostajesz otoczony ze swoim oddziałem. Macie małe szanse na wyjście z tego cało. Kluczowe będzie wybranie jednej z 3 możliwych strategii walki. Od tego zależy przetrwanie lub śmierć bohatera",
+      "connections": {
+        "1": {
+          "target_node_id": "27",
+          "decision": "Próbujesz się wycofać",
+          "is_active": true,
+          "switcher": {
+          }
+        },
+        "2": {
+          "target_node_id": "29",
+          "decision": "Wywabiasz bandytów",
+          "is_active": true,
+          "switcher": {
+          }
+        },
+        "3": {
+          "target_node_id": "28",
+          "decision": "Atakujesz bandytów wewnątrz wioski",
+          "is_active": true,
+          "switcher": {
+          }
+        }
+      }
+    },
+    {
+      "id": "27",
+      "description": "Otoczony przez siły bandytów próbujesz uciec z tego piekła na ziemi. Niestety w trakcie odwrotu zostajesz trafiony zbłąkaną kulą. Po chwili padasz martwy na ziemię [*]",
+      "connections": {
+        "1": {
+          "target_node_id": "1",
+          "decision": "Zacznij od nowa..",
+          "is_active": true,
+          "switcher": {
+          }
+        }
+      }
+    },
+    {
+      "id": "28",
+      "description": "Do walk dochodzi wewnątrz wioski. W czasie tej rzezi widzisz jak jakiś bandyta wbiega z kobieta do chaty. Podejrzewasz, że chce ją zgwałcić. Czujesz jak po Twoich plecach przebiega dreszcz, masz co to tego złe przeczucia. Co robisz?",
+      "connections": {
+        "1": {
+          "target_node_id": "30",
+          "decision": "Nie daję się rozproszyć i walczę w obronie chłopów",
+          "is_active": true,
+          "switcher": {
+          }
+        },
+        "2": {
+          "target_node_id": "31",
+          "decision": "Rzucam wszystko i biegnę jej pomóc",
+          "is_active": true,
+          "switcher": {
+          }
+        }
+      }
+    },
+    {
+      "id": "29",
+      "description": "Decydujesz się wywabić bandytów poza granice wioski. W tym celu wysyłasz kilku swoich ludzi jako przynętę. Tymczasem rozstawiasz swoich ludzi na pobliskich polach. Kiedy bandyci pojawiają się w zasięgu wzroku otwierasz do nich ogień po czym przechodzisz do walki wręcz. Udaje ci się wygrać. Wdzięczni chłopi przyłączają się do ciebie i informują, że pod Białymstokiem organizują się siły rojalistów",
+      "connections": {
+        "1": {
+          "target_node_id": "32",
+          "decision": "Udajesz się pod Białystok",
+          "is_active": true,
+          "switcher": {
+          }
+        }
+      }
+    },
+    {
+      "id": "30",
+      "description": "Koncentrujesz się na wygraniu potyczki. Jest ona krwawa. Tracisz wielu ludzi i sam ponosisz niewielkie rany ale zdołałeś przetrwać. Udaje ci się wygrać. Wdzięczni chłopi przyłączają się do ciebie i informują, że pod Białymstokiem organizują się siły rojalistów",
+      "connections": {
+        "1": {
+          "target_node_id": "32",
+          "decision": "Udajesz się pod Białystok",
+          "is_active": true,
+          "switcher": {
+          }
+        }
+      }
+    },
+    {
+      "id": "31",
+      "description": "Decydujesz się jej pomóc. Wbiegasz za nią do chaty z szablą w dłoni. Po chwili za tobą ktoś z całej siły uderza cię wazonem w głowę. To zasadzka! Kobieta również jest bandytą. Umierasz zadźgany przez obie postacie [*]",
+      "connections": {
+        "1": {
+          "target_node_id": "1",
+          "decision": "Zacznij od nowa..",
+          "is_active": true,
+          "switcher": {
+          }
+        }
+      }
+    },
+    {
+      "id": "32",
+      "description": "Po kilku dniach docierasz pod Białystok dosłownie kilkanaście minut przed rozpoczęciem bitwy. Masz do wybory czy będziesz atakować na przodzie formacji, w środku czy na tyle. Będzie to miało decydujący wpływ na przebieg walki i twoje szanse przeżycia.",
+      "connections": {
+        "1": {
+          "target_node_id": "33",
+          "decision": "Atakujesz na przodzie",
+          "is_active": true,
+          "switcher": {
+          }
+        },
+        "2": {
+          "target_node_id": "35",
+          "decision": "Atakujesz w środku",
+          "is_active": true,
+          "switcher": {
+          }
+        },
+        "3": {
+          "target_node_id": "34",
+          "decision": "Atakujesz na tyle",
+          "is_active": true,
+          "switcher": {
+          }
+        }
+      }
+    },
+    {
+      "id": "33",
+      "description": "Decydujesz się na atak na przodzie chcąc zaznać chwały o glorii. Niestety rzeczywistość okazuje się brutalna. W czasie twojej szarży padasz jako pierwszy od kul nieprzyjaciela. Męstwo a może raczej głupota zgubiły cię [*]",
+      "connections": {
+        "1": {
+          "target_node_id": "1",
+          "decision": "Zacznij od nowa..",
+          "is_active": true,
+          "switcher": {
+          }
+        }
+      }
+    },
+    {
+      "id": "34",
+      "description": "Masz nadzieję, że tył formacji będzie bezpiecznym miejscem gdzie nie stanie ci się krzywda. Niestety twoje przypuszczenia okazały się błędne. Zostaliście zaskoczeni przez szarżę wrogiej kawalerii, która próbowała odciąć was od ucieczki. Jednostki wpadają w panikę. Niestety w tym chaosie bohater traci życie [*]",
+      "connections": {
+        "1": {
+          "target_node_id": "1",
+          "decision": "Zacznij od nowa",
+          "is_active": true,
+          "switcher": {
+          }
+        }
+      }
+    },
+    {
+      "id": "35",
+      "description": " Środek formacji jej zazwyczaj najbezpieczniejszym miejscem na polu bitwy. Twój wybór byłą mądry albo po prostu stanowił dobry strzał. Udaje ci się wyjść z bitwy bez szwanku i 3 zabójstwami na swoim koncie. Po bitwie wracasz do obozu i masz dwie możliwości spotkania tam Pana Wołodyjowskiego",
+      "connections": {
+        "1": {
+          "target_node_id": "36",
+          "decision": "Spotykacie się w namiocie (jeśli spełniony jest drugi warunek)",
+          "is_active": false,
+          "switcher": {
+          }
+        },
+        "2": {
+          "target_node_id": "37",
+          "decision": "Spotykanie się nad ogniskiem",
+          "is_active": true,
+          "switcher": {
+          }
+        }
+      }
+    },
+    {
+      "id": "36",
+      "description": "Przechadzając się po obozowisku zaczepia się Bogusław. Twierdzi, że znalazł Wołodyjowskiego. Prowadzi do namiotu gdzie rzeczywiście jest. Następuje wasze pojednanie. Po chwili sielankę przerywa jeden z dowódców, który informuje, że w Tykocinie zaszył się Radziwiłł. Macie tam wyruszyć za dokładnie tydzień.",
+      "connections": {
+        "1": {
+          "target_node_id": "38",
+          "decision": "Ruszacie do Tykocina",
+          "is_active": true,
+          "switcher": {
+          }
+        }
+      }
+    },
+    {
+      "id": "37",
+      "description": "Odpoczywasz ze swoimi kompanami przy ognisku. Nagle podchodzi do was nikt inny jak Pan Wołodyjowski. Dochodzi do pojednania między nim a bohaterem. Następnie razem pijecie piwo i odpoczywacie przy ognisku. Po krótkiej rozmowie dowiadujesz się, że w Tykocinie zaszył się Radziwiłł i wkrótce tam wyruszycie.",
+      "connections": {
+        "1": {
+          "target_node_id": "38",
+          "decision": "Ruszacie do Tykocina",
+          "is_active": true,
+          "switcher": {
+          }
+        }
+      }
+    },
+    {
+      "id": "38",
+      "description": "Na miejscu rozpoczyna się oblężenie. W obozie konfederatów trwa nerwowe odliczanie. W końcu dochodzi do szturmu. Od wcześniej podjętych decyzji oraz strategii gracza zależy czy przeżyje lub czy zginie",
+      "connections": {
+        "1": {
+          "target_node_id": "39",
+          "decision": "Bohater decyduje się na bezpośredni szturm",
+          "is_active": false,
+          "switcher": {
+          }
+        },
+        "2": {
+          "target_node_id": "40",
+          "decision": "Bohater czeka aż  pierwsza fala oczyści drogę",
+          "is_active": true,
+          "switcher": {
+          }
+        },
+        "3": {
+          "target_node_id": "41",
+          "decision": "Bohater decyduje się na bezpośredni szturm",
+          "is_active": true,
+          "switcher": {
+          }
+        }
+      }
+    },
+    {
+      "id": "39",
+      "description": "Bohater decyduje się ruszyć jako pierwszy po chwałę oraz w celu zabicie Radziwiłła i przejęcia zamku. Niestety przeliczył się i na murach spotyka oddział strzelców. W ostatniej chwili jednak Bogusław osłania go swoim ciałem i ginie na miejscu. Bohaterowi udaje się pokonać strzelców, jednak przyszło za to zapłacić wysoką cenę. ",
+      "connections": {
+        "1": {
+          "target_node_id": "42",
+          "decision": "Po bitwie udajesz się na mury",
+          "is_active": true,
+          "switcher": {
+          }
+        }
+      }
+    },
+    {
+      "id": "40",
+      "description": "Bohater wykazuje się cierpliwością i rozsądkiem dając pójść w pierwszej kolejności żołnierzom przystosowanym do zdobywania murów. Po ich przychodzi kolej na niego. Bez problemu udaje mu się pokonać pozostałych przeciwników",
+      "connections": {
+        "1": {
+          "target_node_id": "42",
+          "decision": "Po bitwie udajesz się na mury",
+          "is_active": true,
+          "switcher": {
+          }
+        }
+      }
+    },
+    {
+      "id": "41",
+      "description": "Bohater decyduje się ruszyć jako pierwszy po chwałę oraz w celu zabicie Radziwiłła i przejęcia zamku. Niestety przeliczył się i na murach spotyka oddział strzelców. Ginie trafiony przez wrogie kule [*]",
+      "connections": {
+        "1": {
+          "target_node_id": "43",
+          "decision": "Pogrzeb",
+          "is_active": true,
+          "switcher": {
+          }
+        }
+      }
+    },
+    {
+      "id": "Świętujesz wielkie zwycięstwo wraz z resztą swoich kompanów i przyjaciół. Alkohol leje się strumieniami a co chwila dochodzą do was coraz to lepsze informacje. Przełomem okazuje się komunikat o powrocie króla. Spoglądacie na wschód słońca z nadzieją na lepsze jutro",
+      "description": " ",
+      "connections": {
+        "1": {
+          "target_node_id": "1",
+          "decision": "Zwycięstwo! [Zagraj ponownie..]",
+          "is_active": true,
+          "switcher": {
+          }
+        }
+      }
+    },
+    {
+      "id": "Otrzymujesz uroczysty pogrzeb godny bohatera narodowego. Twoja pamięć będzie żyć w sercach mieszkańców tego kraju przez długie dziesięciolecia.",
+      "description": " ",
+      "connections": {
+        "1": {
+          "target_node_id": "1",
+          "decision": "Spróbuj jeszcze raz..",
+          "is_active": true,
+          "switcher": {
+          }
         }
       }
     }
