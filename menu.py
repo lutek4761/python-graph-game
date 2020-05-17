@@ -2,8 +2,8 @@ from pygame import font
 import pygame
 from file_manager import FileManager
 
-class Menu:
 
+class Menu:
     def __init__(self, display):
         font.init()
         self.display = display
@@ -11,9 +11,11 @@ class Menu:
         self.selected_index = 0
         self.menu_text = ["Graj", "Zapisz", "Wyjdz"]
         self.blocker = False
-        self.set_game_scene = False
+        self.set_game_scene = False  # linia 37
 
     def tick(self, up, down, enter, esc):
+        if esc:
+            exit(0)
         if up and self.blocker:
             self.blocker = False
             if self.selected_index == 0:

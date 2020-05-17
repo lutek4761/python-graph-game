@@ -11,10 +11,11 @@ class FileManager:
             return FileManager.data
 
     @staticmethod
-    def save(path):
+    def save(path):  # menu linia 39
         with open(path, "w") as f:
             json.dump(FileManager.data, f, indent=2)
 
     @staticmethod
-    def set_data(data):
+    def set_data(data):  # game linia 26
         FileManager.data = data
+

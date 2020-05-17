@@ -18,7 +18,7 @@ class Game:
                 self.children_indexes.append(self.current_node.connections[index]["target_node_id"])
         self.__currently_selected_option = 1
         self.blocker = False
-        self.set_menu_scene = False
+        self.set_menu_scene = False  # linia 27
 
     def tick(self, up, down, enter, esc):
         if esc:
@@ -61,6 +61,7 @@ class Game:
     def draw(self):
         self.current_node.draw(self.__currently_selected_option)
 
+    # naprawic i zakomentowac
     def handle_switchers(self):
         for key in self.current_node.connections:
             if len(self.current_node.connections[key]["switcher"]) > 0:
@@ -69,3 +70,4 @@ class Game:
                     connection_id = self.current_node.connections[key]["switcher"][key2]["connection_id"]
                     node_to_set = self.nodes[self.current_node.connections[key]["switcher"][key2]["node_id"]]
                     node_to_set.connections[connection_id]["is_active"] = value
+                    print(self.current_node.connections[key])

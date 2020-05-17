@@ -18,6 +18,7 @@ class SceneManager:
     def set_menu_scene():
         SceneManager.current_scene = SceneManager.menu
 
+    # main linia 47
     @staticmethod
     def check_for_switch():
         if SceneManager.menu.set_game_scene:

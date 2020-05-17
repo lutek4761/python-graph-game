@@ -9,13 +9,6 @@ class Node:
         self.connections = connections
         self.description = description
 
-    def __str__(self):
-        connections = ""
-        for key in self.connections:
-            connections += "{} {}\n".format(self.connections[key]["target_node_id"], self.connections[key]["decision"])
-
-        return "Index: {}\nDescription: {}\n".format(self.id, self.description) + connections
-
     def draw(self, selected_index):
         lines_counter = 1
         string = ""
@@ -29,6 +22,7 @@ class Node:
         text = self.node_font.render(string, False, (255, 255, 255))
         self.display.blit(text, (50, 25 * lines_counter))
 
+        # zakomentowac
         for key in self.connections:
             if not self.connections[key]["is_active"]:
                 continue
