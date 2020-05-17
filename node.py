@@ -30,10 +30,12 @@ class Node:
         self.display.blit(text, (50, 25 * lines_counter))
 
         for key in self.connections:
+            if not self.connections[key]["is_active"]:
+                continue
             if selected_index == int(key):
                 color = (0, 255, 0)
             else:
                 color = (255, 255, 255)
-            text = self.node_font.render(key + ". " + self.connections[key]["decision"], False, color)
+            text = self.node_font.render(self.connections[key]["decision"], False, color)
             self.display.blit(text, (50, (lines_counter + 2) * 25))
             lines_counter += 1

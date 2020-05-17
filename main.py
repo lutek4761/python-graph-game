@@ -8,6 +8,7 @@ delta = 0
 up = False
 down = False
 enter = False
+esc = False
 clock = pygame.time.Clock()
 
 while True:
@@ -18,10 +19,12 @@ while True:
         continue
 
     for event in pygame.event.get():
-        if event.type == QUIT or (event.type == KEYDOWN and event.key == K_ESCAPE):
+        if event.type == QUIT:
             pygame.quit()
             exit(0)
         if event.type == pygame.KEYDOWN:
+            if event.key == K_ESCAPE:
+                esc = True
             if event.key == pygame.K_DOWN:
                 down = True
             if event.key == pygame.K_UP:
@@ -30,6 +33,8 @@ while True:
                 enter = True
 
         if event.type == pygame.KEYUP:
+            if event.key == K_ESCAPE:
+                esc = False
             if event.key == pygame.K_DOWN:
                 down = False
             if event.key == pygame.K_UP:
@@ -37,7 +42,7 @@ while True:
             if event.key == pygame.K_RETURN:
                 enter = False
 
-    SceneManager.current_scene.tick(up, down, enter)
+    SceneManager.current_scene.tick(up, down, enter, esc)
     SceneManager.current_scene.draw()
     SceneManager.check_for_switch()
     pygame.display.update()

@@ -1,6 +1,6 @@
 from pygame import font
 import pygame
-
+from file_manager import FileManager
 
 class Menu:
 
@@ -13,7 +13,7 @@ class Menu:
         self.blocker = False
         self.set_game_scene = False
 
-    def tick(self, up, down, enter):
+    def tick(self, up, down, enter, esc):
         if up and self.blocker:
             self.blocker = False
             if self.selected_index == 0:
@@ -36,7 +36,7 @@ class Menu:
             if self.selected_index == 0:
                 self.set_game_scene = True
             elif self.selected_index == 1:
-                pass # zapisz
+                FileManager.save('objects.json')
             elif self.selected_index == 2:
                 pygame.quit()
                 exit(0)
