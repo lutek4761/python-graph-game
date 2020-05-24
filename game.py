@@ -70,4 +70,3 @@ class Game:
                     connection_id = self.current_node.connections[key]["switcher"][key2]["connection_id"]
                     node_to_set = self.nodes[self.current_node.connections[key]["switcher"][key2]["node_id"]]
                     node_to_set.connections[connection_id]["is_active"] = value
-                    print(self.current_node.connections[key])
